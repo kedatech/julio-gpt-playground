@@ -38,10 +38,11 @@ body {
   align-content: center;
   justify-content: start;
   margin: 0;
+  padding: 0 1em;
 }
 
 
-@media (width < 800px){
+@media (max-width:800px){
   .landing-container{
     height: auto;
     grid-template-columns: 1fr;
