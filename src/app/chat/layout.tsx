@@ -7,9 +7,9 @@ function layout({
 }) {
   return (
 
-    <main className="flex flex-col items-center justify-center w-screen h-screen text-gray-800 p-10">
+    <main className="flex flex-col items-center justify-center w-screen h-screen text-gray-800 md:p-10">
 
-      <div className="flex flex-col flex-grow w-full max-w-xl bg-white/10 border  border-gray-900 overflow-hidden shadow-xl rounded-lg">
+      <div className="flex flex-col flex-grow w-full max-w-xl md:bg-white/10 border  border-gray-900 overflow-hidden shadow-xl rounded-lg">
         {children}
       </div>
     </main>
