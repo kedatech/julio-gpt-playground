@@ -57,6 +57,6 @@ const seoByRoute: Record<RouteKey, SEO> = {
 };
 
 /**@description Función para obtener los metadatos de SEO de una ruta específica */
-export function getSEO(route: RouteKey): SEO | undefined {
+export function getSEO(route: RouteKey): SEO {
     return seoByRoute[route];
 }

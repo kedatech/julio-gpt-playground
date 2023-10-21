@@ -1,4 +1,8 @@
+import { Metadata } from 'next'
 import React from 'react'
+import { getSEO } from '@/shared/seoData'
+
+export const metadata: Metadata = getSEO("CHAT")
 
 function layout({
   children,
