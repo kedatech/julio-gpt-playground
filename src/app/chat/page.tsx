@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import { Back } from '@/shared/components'
 
 import { BotMessage, UserMessage } from './components'
 export default function Chat() {
@@ -7,7 +8,7 @@ export default function Chat() {
     <>
 
       <div className="flex flex-col flex-grow h-0 p-4 overflow-x-hidden">
-
+        <Back />
         {/* Mensajes */}
         <BotMessage message="Te queiro bro" />
         <UserMessage message="Yo a ti Julio" />
