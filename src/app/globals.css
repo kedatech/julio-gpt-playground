@@ -1,37 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, #101836, #000);
 }
 
 /* bg-gradient-to-b from-[#101836] to-[#000] flex items-center justify-center h-screen */
 .landing-container{
-  background: linear-gradient(to bottom, #101836, #000);
   display: grid;
   grid-template-columns: 3fr 1.5fr;
   height: 100vh;
@@ -53,4 +30,14 @@ body {
     justify-content: center;
     height: 100vh;
   }
+}
+
+/* / */
+.rotate-45 {
+  --transform-rotate: 45deg;
+  transform: rotate(45deg);
+}
+
+.group:hover .group-hover\:flex {
+  display: flex;
 }
