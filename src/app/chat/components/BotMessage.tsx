@@ -11,8 +11,8 @@ export const BotMessage = ({ message }: { message: string}) => {
         <img src="/julio-perfil-image.svg" alt="julio" />
       </div>
       <div>
-        <div className="bg-gray-100 p-3 rounded-r-2xl rounded-tl-2xl">
-          <p className="text-sm">{message}</p>
+        <div className="bg-gray-100 text-gray-600 p-3 rounded-r-2xl rounded-tl-2xl">
+          <p className="text-sm font-medium">{message}</p>
         </div>
         <span className="text-xs text-gray-500 leading-none">{fechaFormateada}</span>
       </div>
