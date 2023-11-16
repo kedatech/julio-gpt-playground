@@ -9,7 +9,12 @@ import Image from 'next/image';
 
 import { BotMessage, UserMessage } from './components';
 
-const defaultMessage : IMessage = { isBot: true, text: "¡Hola! Soy Julio capibara, puedo ayudarte con dudas sobre esfe agape", timeStamp:Date()}
+const defaultMessage : IMessage = { isBot: true, text: `
+## ¡Hola!
+
+Soy **Julio** capibara, puedo ayudarte con dudas sobre [esfe agape](https://www.esfe.agape.edu.sv)
+![](/banner-logo-esfe.jpg)
+`, timeStamp:Date()}
 type IStatus = "loading" | "ready" | "limit" | "error"
 export default function Chat() {
   const [newMessage, setNewMessage] = useState<string>("");

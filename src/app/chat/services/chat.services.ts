@@ -1,7 +1,7 @@
 import { IChat } from '../interfaces/Chat.interfaces';
 import { IResponse } from '../interfaces/Response.interfaces';
 
-const ENDPOINT = "https://julio-gpt-auth.onrender.com/api/chat/test";
+const ENDPOINT = "http://localhost:5000/api/chat/test";
 
 interface ISendMessageParams {
     history: any[],
