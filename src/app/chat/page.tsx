@@ -9,10 +9,11 @@ import Image from 'next/image';
 
 import { BotMessage, UserMessage } from './components';
 
+const defaultMessage : IMessage = { isBot: true, text: "¡Hola! Soy Julio capibara, puedo ayudarte con dudas sobre esfe agape", timeStamp:Date()}
 type IStatus = "loading" | "ready" | "limit" | "error"
 export default function Chat() {
   const [newMessage, setNewMessage] = useState<string>("");
-  const [messages, setMessages] = useLocalStorage<IMessage[]>("messages-user", []);
+  const [messages, setMessages] = useLocalStorage<IMessage[]>("messages-user", [defaultMessage]);
   const [status, setStatus] = useState<IStatus>("ready");
   console.log(status)
 
