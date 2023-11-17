@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image'
 import Markdown from 'markdown-to-jsx'
 import { formatoPersonalizado } from '@/shared/helpers/FormatDate';
+import { formatMarkdownImage } from '@/shared/helpers/FormtaMarkdownImage';
 import './botMessage.css'
 
 export const BotMessage = ({ message, datetime }: { message: string, datetime: string }) => {
@@ -21,7 +22,7 @@ export const BotMessage = ({ message, datetime }: { message: string, datetime: s
         <div className="bg-gray-100 w-full text-gray-600 p-3 rounded-r-2xl rounded-bl-2xl">
           <section className="markdown-container text-sm font-medium">
             <Markdown>
-              {message}
+              {formatMarkdownImage(message)}
             </Markdown>
           </section>
         </div>
