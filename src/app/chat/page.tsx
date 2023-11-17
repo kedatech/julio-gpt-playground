@@ -1,8 +1,8 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, KeyboardEventHandler } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { Back } from '@/shared/components';
-import { useLocalStorage } from '@/shared/hooks/useLocalStorage';
+// import { useLocalStorage } from '@/shared/hooks/useLocalStorage'; ! TODO: parche
 import { IMessage } from './interfaces/Message.interfaces';
 import { sendMessage } from './services/chat.services';
 import Image from 'next/image';
@@ -18,7 +18,7 @@ Soy **Julio** capibara, puedo ayudarte con dudas sobre [esfe agape](https://www.
 type IStatus = "loading" | "ready" | "limit" | "error"
 export default function Chat() {
   const [newMessage, setNewMessage] = useState<string>("");
-  const [messages, setMessages] = useLocalStorage<IMessage[]>("messages-user", [defaultMessage]);
+  const [messages, setMessages] = useState<IMessage[]>([defaultMessage]);
   const [status, setStatus] = useState<IStatus>("ready");
   console.log(status)
 
@@ -55,6 +55,12 @@ export default function Chat() {
     scrollToBottom(); // Desplazar hacia abajo para ver la respuesta de Julio
   };
 
+  const handleEnterKey = (e: any ):void => {
+    console.log(e.key)
+    if (e.key === 'Enter') {
+      handleSend()
+    }
+  }
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
@@ -86,6 +92,7 @@ export default function Chat() {
 
       <div className="flex bg-gray-300/10 p-4">
         <input
+          onKeyDown={(e)=> handleEnterKey(e)}
           onChange={(e) => setNewMessage(e.target.value)}
           value={newMessage}
           disabled={status == "loading"} // Deshabilitar el input cuando loading sea true

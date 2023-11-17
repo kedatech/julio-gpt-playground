@@ -1,23 +1,17 @@
-"useclient"
-import { useState, useEffect } from 'react';
+// "use client"
+// import { useState, useEffect } from 'react';
 
-export function useLocalStorage<T>(key: string, initialValue: T) {
-  // Verifica si el código se está ejecutando en el lado del cliente antes de usar localStorage
-  const isClient = typeof window !== 'undefined';
+// export function useLocalStorage<T>(key: string, initialValue: T) {
+  
+//   const [value, setValue] = useState<T>([] as T);
+//   useEffect(()=> {
+//     const storedValue = localStorage.getItem(key);
+//     storedValue ? setValue(JSON.parse(storedValue)) : null
+//   }, []) 
 
-  // Obtiene el valor actual del localStorage o utiliza el valor inicial proporcionado
-  const storedValue = isClient ? localStorage.getItem(key) : null;
-  const initial = storedValue ? JSON.parse(storedValue) : initialValue;
+//   useEffect(() => {
+//     localStorage.setItem(key, JSON.stringify(value));
+//   }, [key, value]);
 
-  // Crea un estado local para el valor
-  const [value, setValue] = useState<T>(initial);
-
-  // Almacena el valor en localStorage cuando cambia (solo si se está ejecutando en el lado del cliente)
-  useEffect(() => {
-    if (isClient) {
-      localStorage.setItem(key, JSON.stringify(value));
-    }
-  }, [key, value, isClient]);
-
-  return [value, setValue] as const;
-}
+//   return [value, setValue] as const;
+// }
