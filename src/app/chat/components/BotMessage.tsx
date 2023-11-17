@@ -10,7 +10,7 @@ export const BotMessage = ({ message, datetime }: { message: string, datetime: s
   const fechaFormateada = formatoPersonalizado(new Date(datetime));
 
   return (
-    <div className="flex w-full mt-2 space-x-3 max-w-[80%]">
+    <div className="flex w-full mt-2 space-x-3 max-w-[95%] md:max-w-[80%]">
       <div className='relative h-full w-8 flex-shrink-0'>
 
         <div className="absolute h-8 w-8 rounded-full bg-gray-100 overflow-hidden">

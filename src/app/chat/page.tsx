@@ -82,7 +82,10 @@ export default function Chat() {
           </React.Fragment>
         ))}
         {status === "loading" && (
-          <p className="text-gray-300 font-medium">Julio está escribiendo...</p>
+          <BotMessage key={uuidv4()} message={`
+          *julio esta escribiendo...*
+          ![cargando...](/stickers/capibara_dev.gif)
+          `.trim()} datetime={new Date().toISOString()} />
         )}
 
         {status === "limit" && (

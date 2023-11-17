@@ -6,7 +6,7 @@ export const UserMessage = ({ message, datetime }: { message: string, datetime: 
   const fechaFormateada = formatoPersonalizado(new Date(datetime));
 
   return (
-    <div className="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
+    <div className="flex w-full mt-2 space-x-3 ml-auto justify-end max-w-[95%] md:max-w-[80%]">
       <div className='flex flex-col'>
         <div className="bg-[#2F80ED] text-white p-3 rounded-l-2xl rounded-br-2xl overflow-x-hidden">
           <p className="text-sm">{message}</p>
