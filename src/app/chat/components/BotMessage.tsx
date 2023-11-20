@@ -43,7 +43,8 @@ export const BotMessage = ({ message, datetime, isNotMsg = false }: IBotMessageP
   };
 
   return (
-    <div className="flex w-full mt-2 space-x-3 max-w-[95%] md:max-w-[80%]">
+    <div className={`flex w-full mt-2 ${isNotMsg ? "max-w-[200px] min-h-[240px]" : "max-w-[95%] md:max-w-[80%]" } space-x-3`}>
+
       <div className="relative h-full w-8 flex-shrink-0">
         <div className="absolute h-8 w-8 rounded-full bg-gray-100 overflow-hidden">
           <Image width={60} height={60} src="/julio-perfil-image.svg" alt="julio" />
