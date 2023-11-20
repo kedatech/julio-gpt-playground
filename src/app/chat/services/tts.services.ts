@@ -5,9 +5,10 @@ interface IgetTTSParams {
 	input: string
 }
 
-interface IgetTTSResponse {
+export interface IgetTTSResponse {
 	success: boolean
 	audio: string
+	blob: Blob
 }
 export const getTTS = async (
 	params: IgetTTSParams
@@ -31,6 +32,7 @@ export const getTTS = async (
 		return {
 			success: false,
 			audio: "",
+			blob: new Blob
 		}
 	}
 	const data = await response.arrayBuffer()
@@ -42,5 +44,6 @@ export const getTTS = async (
 	return {
 		success: true,
 		audio: audioUrl,
+		blob
 	}
 }
