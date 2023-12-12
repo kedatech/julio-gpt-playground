@@ -1,4 +1,4 @@
-const direccionDelHost = "https://julio-gpt-backend-dev-xgnh.2.us-1.fl0.io/images";
+const direccionDelHost = "https://julio-gpt-auth.onrender.com/images";
 
 export function formatMarkdownImage(markdown: string): string {
     // Expresión regular para buscar imágenes en formato ![alt](src)
